@@ -1,4 +1,4 @@
-from room import Room
+from room.room import Room
 
 # Declare all the rooms
 room = {

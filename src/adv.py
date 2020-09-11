@@ -1,6 +1,6 @@
-from room import Room
+from room.room import Room
 from player import Player
-from directions import room
+from room.directions import room
 
 #
 # Main

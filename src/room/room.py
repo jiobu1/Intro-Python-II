@@ -13,7 +13,6 @@ class Room:
         self.w_to = None
         self.e_to = None
 
-
     def __call__(self, direction):
         # print(f"Room.__call__ called! direction={direction}")
         self.direction_method = {
