@@ -1,6 +1,7 @@
 from room.room import Room
 from player import Player
 from room.directions import room
+from items.inventory import inventory
 
 #
 # Main
@@ -43,3 +44,14 @@ while True:
     except TypeError:
         print("Please choose n, s, e, w.")
 
+
+# * Add functionality to the main loop that prints out all the items that are
+#     visible to the player when they are in that room.
+"""
+To Do:
+inventory available in room
+player's inventory
+randomly assign item
+if they win - message
+if they lose - message
+"""

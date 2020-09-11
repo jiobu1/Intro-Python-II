@@ -1,4 +1,5 @@
 from room.room import Room
+from items.inventory import inventory
 
 # Declare all the rooms
 room = {
@@ -29,3 +30,5 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
+
+# Add items to rooms

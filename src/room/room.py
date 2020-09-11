@@ -12,6 +12,7 @@ class Room:
         self.s_to = None
         self.w_to = None
         self.e_to = None
+        self.inventory = []
 
     def __call__(self, direction):
         # print(f"Room.__call__ called! direction={direction}")
@@ -25,3 +26,12 @@ class Room:
 
     def __str__(self):
         return f'{self.name}.\n{self.description}'
+
+    def pickup(self, item):
+        pass
+
+    def drop(self, item):
+        pass
+
+    def room_items(self):
+        pass
