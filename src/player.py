@@ -19,10 +19,15 @@ class Player:
             return  self.current_room
 
     def pickup(self, item):
-        pass
+        self.inventory.append(item)
+        print(f"{self.name}, {item.name} is added to your inventory!")
 
     def drop(self, item):
-        pass
+        self.inventory.remove(item)
+        print(f"{self.name}, {item.name} has been removed from your inventory!")
 
     def inventory_list(self):
         pass
+
+if __name__ == '__main__':
+    pass

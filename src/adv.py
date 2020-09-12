@@ -38,6 +38,19 @@ while True:
                 # Print an error message if the movement isn't allowed.
                 s = "You cannot go in this direction"
 
+        elif selection == 'p':
+            #random.choice
+            # if else of what whill happen when they get different items
+            #if they win - message
+            #if they lose - message
+            pass
+
+        elif selection == 'd':
+            # drop item
+            # remove item from players inventory
+            # add to regular inventory
+            pass
+
         else:
             print("Please choose a valid direction.")
 

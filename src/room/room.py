@@ -28,10 +28,13 @@ class Room:
         return f'{self.name}.\n{self.description}'
 
     def pickup(self, item):
-        pass
+        self.inventory.append(item)
 
     def drop(self, item):
-        pass
+        self.inventory.remove(item)
 
     def room_items(self):
         pass
+
+if __name__ == '__main__':
+    pass
