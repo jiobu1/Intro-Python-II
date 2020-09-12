@@ -6,6 +6,7 @@ class Player:
     def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
+        self.foundBook = False
         self.inventory = []
 
     def __str__(self):
@@ -19,15 +20,23 @@ class Player:
             return  self.current_room
 
     def pickup(self, item):
-        self.inventory.append(item)
-        print(f"{self.name}, {item.name} is added to your inventory!")
+            takeItem = input('Take item? (Y/N): ')
+            if takeItem[0].lower() == 'y':
+                self.inventory.append(item.name)
+                print(f'{item.description}\n')
+                print(f'You took the {item.name}\nCheck your inventory with \'items\'\n\n')
+            else:
+                print("No items picked up")
 
     def drop(self, item):
         self.inventory.remove(item)
         print(f"{self.name}, {item.name} has been removed from your inventory!")
 
-    def inventory_list(self):
-        pass
+    def check_inventory(self):
+        if len(self.inventory) >=1:
+            print(f"""Items: {', '.join(self.inventory)}""")
+        else:
+            print('you don\'t have any items yet')
 
 if __name__ == '__main__':
     pass

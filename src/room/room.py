@@ -34,7 +34,10 @@ class Room:
         self.inventory.remove(item)
 
     def room_items(self):
-        pass
+        if len(self.inventory) >=1:
+            print(f"""Items: {', '.join(self.inventory.name)}""")
+        else:
+            print('There are no items in this room')
 
 if __name__ == '__main__':
     pass
