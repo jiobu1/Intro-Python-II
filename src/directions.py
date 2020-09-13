@@ -1,5 +1,5 @@
-from room.room import Room
-from items.inventory import inventory
+from room import Room
+from inventory import inventory
 
 # Declare all the rooms
 room = {

@@ -1,7 +1,7 @@
-from src.room.room import Room
+from room import Room
 from player import Player
-from src.room.directions import room
-from src.items.inventory import inventory
+from directions import room
+from inventory import inventory
 
 #
 # Main

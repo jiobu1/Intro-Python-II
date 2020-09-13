@@ -1,6 +1,6 @@
-from items.items import Items
-from src.room.room import Room
-from src.room.directions import room
+from items import Items
+from room import Room
+from directions import room
 
 inventory = {
     "treasure_chest": Items("Treasure Chest",
