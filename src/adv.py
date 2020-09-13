@@ -15,7 +15,7 @@ player = Player(name = player_name, current_room = room['outside'])
 
 print(f'Welcome {player.name}! You are currently in the room {player.current_room}')
 
-while True:
+while player.alive and player.no_book:
 
     #Player has to choose direction
     #Selection has to be an input

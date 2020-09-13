@@ -6,7 +6,8 @@ class Player:
     def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
-        self.book = False
+        self.no_book = True
+        self.alive = True
         self.inventory = []
 
     def __str__(self):
@@ -26,10 +27,24 @@ class Player:
                 print(f'You found the {item.name}\n')
                 take_item = input('Take item? (Y/N): \n ---> ')
                 if take_item[0].lower() == 'y':
-                    print(f'{item.description}\n')
-                    self.inventory.append(item)
-                    print(f'You took the {item.name}. \n Check your inventory with \"items\"\n\n')
-                    items_taken += 1
+                    if item.name == "Ricin \n":
+                        print("""You have touched Ricin, one of the most deadliest of poisons in the world, sorry, but you are dead now. Goodbye...""")
+                        self.alive = False
+                    elif item.name == "Treasure Chest \n":
+                        print(f"""This is the Treasure Chest. You will not have to work for the rest of your life, there are enough spoils in these coiffers to make King Midas jealous 
+                        but you cannot take this treasure without another item.""")
+                        items_taken += 0
+                    elif item.name == "Book of Knowledge \n":
+                        print("""This is the real treasure! The Book of Knowledge, holds all the secrets of the world. As, an added bonus, you also get the treasure chest. \n You have won the game!
+                        Hope you play again soon!""")
+                        self.inventory.append(item)
+                        items_taken += 1
+                        self.no_book = False
+                    else:
+                        print(f'{item.description}\n')
+                        self.inventory.append(item)
+                        print(f'You took the {item.name}. \n Check your inventory with \"items\"\n\n')
+                        items_taken += 1
 
             for _ in range(0, items_taken):
                 self.current_room.inventory.pop(0)
