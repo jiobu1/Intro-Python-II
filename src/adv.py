@@ -46,27 +46,27 @@ while True:
                 s = "You cannot go in this direction"
 
         elif selection == 'search':
-            player.search()
+            # if player.inventory == inventory['poison']:
+            #     take_job = input('Do you take the job? (Y/N): ').upper()
+            #     print(f"""Sorry {player.name}!
+            #     Game over!
+            #     Thank you for playing {player.name}!
+            #     Play again soon...""")
+            #     break
+
+            # elif player.inventory == inventory['book']:
+            #     player.book = True
+            #     print(f"""Congratulations {player.name}!
+            #     You won the game! You found the Book of Knowledge!
+            #     Thank you for playing {player.name}!
+            #     Play again soon...""")
+            #     break
+
+            # else:
+                player.search()
 
         elif selection == 'items':
             player.check_inventory()
-
-        elif player.inventory == inventory['poison']:
-            if inventory['poison'] in player.inventory:
-                print(f"""Sorry {player.name}!
-                Game over!
-                Thank you for playing {player.name}!
-                Play again soon...""")
-                break
-
-        elif player.inventory == inventory['book']:
-            player.book = True
-            if inventory['book'] in player.inventory:
-                print(f"""Congratulations {player.name}!
-                You won the game! You found the Book of Knowledge!
-                Thank you for playing {player.name}!
-                Play again soon...""")
-                break
 
         else:
             print("You cannot perform this action. Please choose a valid action.")
