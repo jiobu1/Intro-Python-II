@@ -31,12 +31,10 @@ class Player:
                         print("""You have touched Ricin, one of the most deadliest of poisons in the world, sorry, but you are dead now. Goodbye...""")
                         self.alive = False
                     elif item.name == "Treasure Chest \n":
-                        print(f"""This is the Treasure Chest. You will not have to work for the rest of your life, there are enough spoils in these coiffers to make King Midas jealous 
-                        but you cannot take this treasure without another item.""")
+                        print(f"""This is the Treasure Chest. You will not have to work for the rest of your life, there are enough spoils in these coiffers to make King Midas jealous but you cannot take this treasure without another item.""")
                         items_taken += 0
                     elif item.name == "Book of Knowledge \n":
-                        print("""This is the real treasure! The Book of Knowledge, holds all the secrets of the world. As, an added bonus, you also get the treasure chest. \n You have won the game!
-                        Hope you play again soon!""")
+                        print("""This is the real treasure! The Book of Knowledge, holds all the secrets of the world. As, an added bonus, you also get the treasure chest. \n You have won the game! Hope you play again soon!""")
                         self.inventory.append(item)
                         items_taken += 1
                         self.no_book = False
