@@ -27,10 +27,10 @@ class Room:
     def __str__(self):
         return f'{self.name}.\n{self.description}'
 
-    def pickup(self, item):
+    def add_item(self, item):
         self.inventory.append(item)
 
-    def drop(self, item):
+    def remove_item(self, item):
         self.inventory.remove(item)
 
     def room_items(self):

@@ -1,12 +1,14 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
 
+from items import Item
+
 class Player:
 
     def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
-        self.foundBook = False
+        self.book = False
         self.inventory = []
 
     def __str__(self):
@@ -19,18 +21,22 @@ class Player:
             self.current_room = self.current_room.__call__(direction)
             return  self.current_room
 
-    def pickup(self, item):
-            takeItem = input('Take item? (Y/N): ')
-            if takeItem[0].lower() == 'y':
-                self.inventory.append(item.name)
-                print(f'{item.description}\n')
-                print(f'You took the {item.name}\nCheck your inventory with \'items\'\n\n')
-            else:
-                print("No items picked up")
+    def search(self):
+        items_taken = 0
+        if len(self.current_room.inventory) >= 1:
+            for item in self.current_room.inventory:
+                print(f'You found a {item}')
+                takeItem = input('Take item? (Y/N): ')
+                if takeItem[0].upper() == 'Y':
+                    self.inventory.append(item)
+                    print(f'{item.description}\n')
+                    print(f'You took the {item.name}\nCheck your inventory with \"items\"\n\n')
+                    items_taken += 1
+            for _ in range(0, items_taken):
+                self.current_room.inventory.pop(0)
 
-    def drop(self, item):
-        self.inventory.remove(item)
-        print(f"{self.name}, {item.name} has been removed from your inventory!")
+        else:
+            print('After searching hard, you find nothing\n')
 
     def check_inventory(self):
         if len(self.inventory) >=1:

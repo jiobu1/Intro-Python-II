@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from items import Item
 from directions import room
 from inventory import inventory
 
@@ -19,12 +20,12 @@ while True:
     #Player has to choose direction
     #Selection has to be an input
     selection = input("""
-                      Please pick a direction, action, or view your intventory:
-                      North(n) South(s) East(e) West(w)
-                      Take item(take [name]) Drop item(drop [name])
-                      View inventory(i)
-                      Quit(q)."""
-                      )
+    Please pick a direction, action, or view your inventory:
+    North(n) South(s) East(e) West(w)
+    Search(search) the room
+    View inventory(items)
+    Quit(q).  """
+    )
 
     try:
         #Have to cast input as a string
@@ -44,58 +45,31 @@ while True:
                 # Print an error message if the movement isn't allowed.
                 s = "You cannot go in this direction"
 
-        elif selection[0] == 'take':
-            for item in player.current_room.inventory:
-                if selection[1] in item.name:
-                    player.pickup(item)
-                    player.current_room.remove_item(item)
-                    print(f"""\nYou find yourself at the {player.current_room}
-                        There is {player.current_room.room_items()} on the ground.""")
+        elif selection == 'search':
+            player.search()
 
-            else:
-                print(f'{selection[1]} not in room.')
-                print(f"""\nYou find yourself at the {player.current_room}
-                       There is {player.current_room.items_in_room()} on the ground.""")
-
-        elif selection[0] == 'drop':
-            for item in player.inventory:
-                if selection[1] in item.name:
-                    player.drop_item(item)
-                    player.current_room.add_item(item)
-                    print(f"""\nYou find yourself at the {player.current_room}
-                        There is {player.current_room.items_in_room()} on the ground.""")
-
-                else:
-                    print(f'{selection[1]} not in inventory')
-                    print(f"""You find yourself at the {player.current_room}
-                        There is {player.current_room.items_in_room()} on the ground.""")
-
-        elif action == 'check':
+        elif selection == 'items':
             player.check_inventory()
 
-        elif player.inventory.name == item['book']:
-            player.foundBook = True
-            if item['book'] in player.inventory:
+        elif player.inventory == inventory['poison']:
+            if inventory['poison'] in player.inventory:
+                print(f"""Sorry {player.name}!
+                Game over!
+                Thank you for playing {player.name}!
+                Play again soon...""")
+                break
+
+        elif player.inventory == inventory['book']:
+            player.book = True
+            if inventory['book'] in player.inventory:
                 print(f"""Congratulations {player.name}!
-                       You won the game! You found the goose!
-                       Thank you for playing {player.name}!
-                       Play again soon...""")
+                You won the game! You found the Book of Knowledge!
+                Thank you for playing {player.name}!
+                Play again soon...""")
                 break
 
         else:
-            print("Please choose a valid direction.")
+            print("You cannot perform this action. Please choose a valid action.")
 
     except TypeError:
-        print("Please choose n, s, e, w.")
-
-
-# * Add functionality to the main loop that prints out all the items that are
-#     visible to the player when they are in that room.
-"""
-To Do:
-inventory available in room
-player's inventory
-randomly assign item
-if they win - message
-if they lose - message
-"""
+        print("You cannot perform this action. Please choose a valid action.")
