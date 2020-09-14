@@ -9,8 +9,8 @@ from inventory import inventory
 #
 
 # Make a new player object that is currently in the 'outside' room.
-print('Welcome Player')
-print("Enter the web, can you it out without getting caught?")
+print('Welcome Player\n')
+print("Enter the web, can you get out without getting caught?\n")
 print("""
            ;               ,
          ,;                 '.
@@ -43,7 +43,7 @@ print("""
         ':;                 ;:"
          ';              ,;'
             "'           '"
-              ' """)
+              ' \n""")
 
 player_name = input("What is your name: ")
 player = Player(name = player_name, current_room = room['outside'])

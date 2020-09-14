@@ -60,13 +60,13 @@ As, an added bonus, you also get the treasure chest. You have won the game!""",
     """
          _...._
        .`      `.
-      / ***      \
+      / ***      :
      : **         :
      :            :
       \          /
        `-.,,,,.-'
       (          )
-       `-......-`l
+       `-......-`
     """),
 
     "light": Item("Star of Eärendil",
