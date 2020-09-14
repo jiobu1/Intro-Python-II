@@ -9,7 +9,42 @@ from inventory import inventory
 #
 
 # Make a new player object that is currently in the 'outside' room.
-print('Welcome')
+print('Welcome Player')
+print("Enter the web, can you it out without getting caught?")
+print("""
+           ;               ,
+         ,;                 '.
+        ;:                   :;
+       ::                     ::
+       ::                     ::
+       ':                     :
+        :.                    :
+     ;' ::                   ::  '
+    .'  ';                   ;'  '.
+   ::    :;                 ;:    ::
+   ;      :;.             ,;:     ::
+   :;      :;:           ,;"      ::
+   ::.      ':;  ..,.;  ;:'     ,.;:
+    "'"...   '::,::::: ;:   .;.;""'
+        ''''....;:::::;,;.;'''
+    .:::.....'"':::::::'",...;::::;.
+   ;:'   '''';.,;:::::;.''''' ':;
+  ::'         ;::;:::;::..         :;
+ ::         ,;:::::::::::;:..       ::
+ ;'     ,;;:;::::::::::::::;";..    ':.
+::     ;:"  ::::::''''::::::  ":     ::
+ :.    ::   ::::::;  :::::::   :     ;
+  ;    ::   :::::::  :::::::   :    ;
+   '   ::   ::::::....:::::'  ,:   '
+    '  ::    :::::::::::::"   ::
+       ::     ':::::::::"'    ::
+       ':       """""""'      ::
+        ::                   ;:
+        ':;                 ;:"
+         ';              ,;'
+            "'           '"
+              ' """)
+
 player_name = input("What is your name: ")
 player = Player(name = player_name, current_room = room['outside'])
 
@@ -24,7 +59,8 @@ while player.alive and player.no_book:
     North(n) South(s) East(e) West(w)
     Search(search) the room
     View inventory(items)
-    Quit(q).  \n --->"""
+    Quit(q).
+    \n --->  """
     )
 
     try:

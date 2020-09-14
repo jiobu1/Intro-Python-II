@@ -24,24 +24,30 @@ class Player:
         items_taken = 0
         if len(self.current_room.inventory) >= 1:
             for item in self.current_room.inventory:
-                print(f'You found the {item.name}\n')
+                print(f'You found the {item.name}\n {item.image}')
                 take_item = input('Take item? (Y/N): \n ---> ')
                 if take_item[0].lower() == 'y':
-                    if item.name == "Ricin \n":
-                        print("""You have touched Ricin, one of the most deadliest of poisons in the world, sorry, but you are dead now. Goodbye...""")
+                    if item.name == "Ricin":
+                        print(f"""You have touched Ricin, one of the most deadliest of poisons in the world!
+Sorry, but you are dead now. Goodbye...""")
                         self.alive = False
-                    elif item.name == "Treasure Chest \n":
-                        print(f"""This is the Treasure Chest. You will not have to work for the rest of your life, there are enough spoils in these coiffers to make King Midas jealous but you cannot take this treasure without another item.""")
+                    elif item.name == "Treasure Chest":
+                        print(f"""This is the Treasure Chest. You will not have to work for the rest of
+your life, there are enough spoils in these coiffers to make King Midas jealous
+but you cannot take this treasure without another item.""")
                         items_taken += 0
-                    elif item.name == "Book of Knowledge \n":
-                        print("""This is the real treasure! The Book of Knowledge, holds all the secrets of the world. As, an added bonus, you also get the treasure chest. \n You have won the game! Hope you play again soon!""")
+                    elif item.name == "Book of Knowledge":
+                        print(f"""This is the real treasure!
+The Book of Knowledge, holds all the secrets of the world.
+As, an added bonus, you also get the treasure chest.
+You have won the game! Hope you play again soon!""")
                         self.inventory.append(item)
                         items_taken += 1
                         self.no_book = False
                     else:
                         print(f'{item.description}\n')
                         self.inventory.append(item)
-                        print(f'You took the {item.name}. \n Check your inventory with \"items\"\n\n')
+                        print(f'You took the {item.name}.\nCheck your inventory with \"items\"\n')
                         items_taken += 1
 
             for _ in range(0, items_taken):
@@ -53,7 +59,7 @@ class Player:
     def check_inventory(self):
         if len(self.inventory) >=1:
             #Able to print inventory list
-            print(f"""Items: \n {' '.join(map(str, self.inventory))}""")
+            print(f"""Items: {' '.join(map(str, self.inventory))}""")
         else:
             print('you don\'t have any items yet')
 

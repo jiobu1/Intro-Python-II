@@ -3,9 +3,10 @@
 
 class Item:
 
-    def __init__(self, name, description):
+    def __init__(self, name, description, image):
         self.name = name
         self.description = description
+        self.image = image
 
     def __str__(self):
         return f'{self.name}.\n{self.description}'
