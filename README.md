@@ -24,14 +24,14 @@ Up to this point, you've gotten your feet wet by working on a bunch of small Pyt
 
 ### Day 2 MVP
 
-* Make rooms able to hold multiple items
-* Make the player able to carry multiple items
-* Add items to the game that the user can carry around
+* Make rooms able to hold multiple items  ✓
+* Make the player able to carry multiple items  ✓
+* Add items to the game that the user can carry around  ✓
 * Add `get [ITEM_NAME]` and `drop [ITEM_NAME]` commands to the parser
 
 ## Specification
 
-The `/src` directory contains the files `adv.py`, which is where the main logic for the game should live, `room.py`, which will contain the definition of the Room class, and `player.py`, which will contain the definition of the Player class.
+The `/src` directory contains the files `adv.py`, which is where the main logic for the game should live, `room.py`, which will contain the definition of the Room class, and `player.py`, which will contain the definition of the Player class.  ✓
 
 
 * Add a REPL parser to `adv.py` that accepts directional commands to move the player ✓
@@ -65,7 +65,7 @@ The `/src` directory contains the files `adv.py`, which is where the main logic 
     that are currently in that room. ✓
 
   * Add functionality to the main loop that prints out all the items that are
-    visible to the player when they are in that room.
+    visible to the player when they are in that room.  ✓
 
 * Add capability to add `Item`s to the player's inventory. The inventory can
   also be a `list` of items "in" the player, similar to how `Item`s can be in a
@@ -113,18 +113,18 @@ The `/src` directory contains the files `adv.py`, which is where the main logic 
   opposite of `get`/`take`.
 
 * Add the `i` and `inventory` commands that both show a list of items currently
-  carried by the player.
+  carried by the player.  ✓
 
 
 ## Stretch Goals
 
 In arbitrary order:
 
-* Add more rooms
+* Add more rooms  ✓
 
 * Add scoring
 
-* Subclass items into treasures
+* Subclass items into treasures  ✓
 
 * Add a subclass to `Item` called `LightSource`.
 
@@ -153,13 +153,13 @@ In arbitrary order:
   * Modify the `get`/`take` code to print "Good luck finding that in the dark!" if
   the user tries to pick up an `Item` in the dark.
 
-* Add methods to notify items when they are picked up or dropped
+* Add methods to notify items when they are picked up or dropped  ✓
 
 * Add light and darkness to the game
 
-* Add more items to the game.
+* Add more items to the game.  ✓
 
-* Add a way to win.
+* Add a way to win.  ✓
 
 * Add more to the parser.
 
@@ -182,7 +182,7 @@ In arbitrary order:
 
 * Modify the code that calls `on_take` to check the return value. If `on_take`
   returns `False`, then don't continue picking up the object. (I.e. prevent the
-  user from picking it up.)
+  user from picking it up.)  ✓
 
   * This enables you to add logic to `on_take` to code things like "don't allow
     the user to pick up the dirt unless they're holding the shovel.
@@ -198,5 +198,5 @@ In arbitrary order:
 
 * Come up with more stretch goals! The sky's the limit!
 
-Artwork from 
+Artwork from
 https://www.asciiart.eu/
